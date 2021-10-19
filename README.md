@@ -1,1 +1,1 @@
-# vastgoed-informatoeplatform
+# vastgoed-informatieplatform
