@@ -3,11 +3,11 @@
     "info": {
         "title": "Vastgoedinformatieplatform API",
         "description": "De API van het Vastgoedinformatieplatform voor integrators",
-        "version": "125c3fb"
+        "version": "local"
     },
     "servers": [
         {
-            "url": "https://vastgoedinformatieplatform-magda-dev.apps.os-dev.magda.cpc.vonet.be",
+            "url": "http://localhost:8080",
             "description": "Generated server url"
         }
     ],
@@ -3613,7 +3613,19 @@
                 },
                 "description": "Inlichting volgens het OSLO-model",
                 "discriminator": {
-                    "propertyName": "inlichtingsType"
+                    "propertyName": "inlichtingsType",
+                    "mapping": {
+                        "PLAN_INLICHTING": "#/components/schemas/OsloPlanInlichting",
+                        "RECHT_INLICHTING": "#/components/schemas/OsloRechtInlichting",
+                        "VERORDENING_INLICHTING": "#/components/schemas/OsloVerordeningInlichting",
+                        "RISICO_INLICHTING": "#/components/schemas/OsloRisicoInlichting",
+                        "VERGUNNING_INLICHTING": "#/components/schemas/OsloVergunningInlichting",
+                        "BEHEER_INLICHTING": "#/components/schemas/OsloBeheerInlichting",
+                        "BESLUIT_INLICHTING": "#/components/schemas/OsloBesluitInlichting",
+                        "INVENTARIS_INLICHTING": "#/components/schemas/OsloInventarisInlichting",
+                        "VORDERING_INLICHTING": "#/components/schemas/OsloVorderingInlichting",
+                        "ATTEST_INLICHTING": "#/components/schemas/OsloAttestInlichting"
+                    }
                 },
                 "anyOf": [
                     {
