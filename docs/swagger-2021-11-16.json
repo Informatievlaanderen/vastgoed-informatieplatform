@@ -44,30 +44,10 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Dossier is gemarkeerd als GEVALIDEERD",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Dossier bevat niet-gekende inlichtingen",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Dossier bestaat niet",
-                        "content": {
-                            "application/json": {
+                            "*/*": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -84,10 +64,30 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Dossier bevat niet-gekende inlichtingen",
                         "content": {
-                            "*/*": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Dossier is gemarkeerd als GEVALIDEERD",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Dossier bestaat niet",
+                        "content": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -1163,30 +1163,10 @@
                     "required": true
                 },
                 "responses": {
-                    "200": {
-                        "description": "Inlichting is gewijzigd",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Fout in request body",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Dossier bestaat niet",
-                        "content": {
-                            "application/json": {
+                            "*/*": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -1203,10 +1183,30 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Fout in request body",
                         "content": {
-                            "*/*": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Inlichting is gewijzigd",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Dossier bestaat niet",
+                        "content": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -1240,30 +1240,10 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Inlichting is verwijderd",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Dossier bestaat niet",
-                        "content": {
-                            "application/json": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -1280,10 +1260,30 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Inlichting is verwijderd",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Dossier bestaat niet",
+                        "content": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -1312,18 +1312,8 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Resultaat van de validatie van een CaPaKey",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/CaPaKeyValidatieResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
@@ -1342,12 +1332,22 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Resultaat van de validatie van een CaPaKey",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaPaKeyValidatieResponse"
                                 }
                             }
                         }
@@ -2476,30 +2476,10 @@
                     "required": true
                 },
                 "responses": {
-                    "201": {
-                        "description": "Inlichting is toegevoegd",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Fout in request body",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Dossier bestaat niet",
-                        "content": {
-                            "application/json": {
+                            "*/*": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -2516,6 +2496,26 @@
                             }
                         }
                     },
+                    "400": {
+                        "description": "Fout in request body",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Inlichting is toegevoegd",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
                     "422": {
                         "description": "Inlichting bestaat al",
                         "content": {
@@ -2526,10 +2526,10 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "404": {
+                        "description": "Dossier bestaat niet",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -2583,20 +2583,33 @@
                     }
                 },
                 "responses": {
-                    "201": {
-                        "description": "Bijlage is toegevoegd",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
-                            "application/json": {
+                            "*/*": {
                                 "schema": {
                                     "type": "object"
                                 }
                             }
                         }
                     },
+                    "413": {
+                        "description": "Bijlage is te groot (maximum 10MB)"
+                    },
                     "400": {
                         "description": "Bad Request",
                         "content": {
                             "*/*": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Bijlage is toegevoegd",
+                        "content": {
+                            "application/json": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -2623,23 +2636,10 @@
                             }
                         }
                     },
-                    "413": {
-                        "description": "Bijlage is te groot (maximum 10MB)"
-                    },
                     "415": {
                         "description": "Extensie is niet toegelaten",
                         "content": {
                             "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "*/*": {
                                 "schema": {
                                     "type": "object"
                                 }
@@ -2657,21 +2657,8 @@
                 "summary": "Geef een lijst van alle aanvragen",
                 "operationId": "listAanvragen",
                 "responses": {
-                    "200": {
-                        "description": "Lijst van aanvragen",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OsloAanvraagListItem"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
@@ -2690,12 +2677,25 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Lijst van aanvragen",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OsloAanvraagListItem"
+                                    }
                                 }
                             }
                         }
@@ -2967,22 +2967,12 @@
                     "required": true
                 },
                 "responses": {
-                    "201": {
-                        "description": "Nieuwe aanvraag is aangemaakt",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
-                            "application/json": {
+                            "*/*": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/AanvraagGeslaagdResponse"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Minstens 1 van de CaPaKeys is ongeldig",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AanvraagValidationResult"
+                                    "type": "object"
                                 }
                             }
                         }
@@ -2997,12 +2987,22 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Minstens 1 van de CaPaKeys is ongeldig",
                         "content": {
-                            "*/*": {
+                            "application/json": {
                                 "schema": {
-                                    "type": "object"
+                                    "$ref": "#/components/schemas/AanvraagValidationResult"
+                                }
+                            }
+                        }
+                    },
+                    "201": {
+                        "description": "Nieuwe aanvraag is aangemaakt",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AanvraagGeslaagdResponse"
                                 }
                             }
                         }
@@ -3018,21 +3018,8 @@
                 "summary": "Geef een lijst van alle vogelrichtlijngebieden",
                 "operationId": "listVogelrichtlijngebieden",
                 "responses": {
-                    "200": {
-                        "description": "Lijst van vogelrichtlijngebieden",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/VogelrichtlijngebiedListItem"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
@@ -3051,12 +3038,25 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Lijst van vogelrichtlijngebieden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VogelrichtlijngebiedListItem"
+                                    }
                                 }
                             }
                         }
@@ -3072,21 +3072,8 @@
                 "summary": "Geef een lijst van alle VEN- en IVON-gebieden",
                 "operationId": "listVenEnIvonGebieden",
                 "responses": {
-                    "200": {
-                        "description": "Lijst van VEN- en IVON-gebieden",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/VenEnIvonGebiedListItem"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
@@ -3105,12 +3092,25 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Lijst van VEN- en IVON-gebieden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/VenEnIvonGebiedListItem"
+                                    }
                                 }
                             }
                         }
@@ -3126,21 +3126,8 @@
                 "summary": "Geef een lijst van alle habitatrichtlijngebieden",
                 "operationId": "listHabitatrichtlijngebieden",
                 "responses": {
-                    "200": {
-                        "description": "Lijst van habitatrichtlijngebieden",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/HabitatrichtlijngebiedListItem"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
@@ -3159,12 +3146,25 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Lijst van habitatrichtlijngebieden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/HabitatrichtlijngebiedListItem"
+                                    }
                                 }
                             }
                         }
@@ -3191,21 +3191,8 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Lijst van dossiers",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/OsloVastgoeddossierListItem"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
@@ -3224,12 +3211,25 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Lijst van dossiers",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OsloVastgoeddossierListItem"
+                                    }
                                 }
                             }
                         }
@@ -3256,32 +3256,12 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Gevonden dossier op basis van ID",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OsloVastgoeddossierDetail"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Dossier niet gevonden",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
                                 }
                             }
                         }
@@ -3296,12 +3276,32 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Gevonden dossier op basis van ID",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OsloVastgoeddossierDetail"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Dossier niet gevonden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
                                 }
                             }
                         }
@@ -3328,32 +3328,12 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "Gevonden aanvraag op basis van ID",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/OsloAanvraagDetail"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
+                    "500": {
+                        "description": "Internal Server Error",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Aanvraag niet gevonden",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorResponse"
                                 }
                             }
                         }
@@ -3368,12 +3348,32 @@
                             }
                         }
                     },
-                    "500": {
-                        "description": "Internal Server Error",
+                    "400": {
+                        "description": "Bad Request",
                         "content": {
                             "*/*": {
                                 "schema": {
                                     "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "200": {
+                        "description": "Gevonden aanvraag op basis van ID",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OsloAanvraagDetail"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Aanvraag niet gevonden",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
                                 }
                             }
                         }
@@ -3403,23 +3403,12 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "attestType": {
                                 "title": "AttestType",
                                 "type": "string",
                                 "description": "AttestType volgens het OSLO-model",
                                 "enum": [
                                     "EPC"
-                                ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
                                 ]
                             },
                             "beschrijving": {
@@ -3442,21 +3431,6 @@
                                     "E",
                                     "F"
                                 ]
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -3473,23 +3447,12 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "beheerType": {
                                 "title": "BeheerType",
                                 "type": "string",
                                 "description": "BeheerType volgens het OSLO-model",
                                 "enum": [
                                     "NATUURBEHEERPLAN"
-                                ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
                                 ]
                             },
                             "beschrijving": {
@@ -3514,21 +3477,6 @@
                                     "TYPE_3",
                                     "TYPE_4"
                                 ]
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -3545,23 +3493,12 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "besluitType": {
                                 "title": "BesluitType",
                                 "type": "string",
                                 "description": "BesluitType volgens het OSLO-model",
                                 "enum": [
                                     "COMPLEX_PROJECT"
-                                ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
                                 ]
                             },
                             "beschrijving": {
@@ -3580,21 +3517,6 @@
                                     "VOORKEURSBESLUIT",
                                     "PROJECTBESLUIT"
                                 ]
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -3602,13 +3524,50 @@
             },
             "OsloInlichting": {
                 "title": "Inlichting",
-                "required": [
-                    "inlichtingsType"
-                ],
                 "type": "object",
                 "properties": {
-                    "inlichtingsType": {
+                    "inlichtingenIndicator": {
+                        "type": "string",
+                        "enum": [
+                            "JA",
+                            "NEE",
+                            "NIET_GEKEND"
+                        ]
+                    },
+                    "inlichtingId": {
                         "type": "string"
+                    },
+                    "bijlagen": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Document"
+                        }
+                    },
+                    "rubriek": {
+                        "type": "string",
+                        "enum": [
+                            "OVERHEIDSPLANNEN",
+                            "MILIEU",
+                            "NATUUR",
+                            "GROND_EN_PANDENBELEID"
+                        ]
+                    },
+                    "inlichtingsType": {
+                        "title": "TypeInlichting",
+                        "type": "string",
+                        "description": "TypeInlichting volgens het OSLO-model",
+                        "enum": [
+                            "PLAN_INLICHTING",
+                            "RECHT_INLICHTING",
+                            "VERORDENING_INLICHTING",
+                            "RISICO_INLICHTING",
+                            "VERGUNNING_INLICHTING",
+                            "BEHEER_INLICHTING",
+                            "BESLUIT_INLICHTING",
+                            "INVENTARIS_INLICHTING",
+                            "VORDERING_INLICHTING",
+                            "ATTEST_INLICHTING"
+                        ]
                     }
                 },
                 "description": "Inlichting volgens het OSLO-model",
@@ -3671,9 +3630,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "inventarisType": {
                                 "title": "InventarisType",
                                 "type": "string",
@@ -3684,14 +3640,6 @@
                                     "ONBEWOONBARE_EN_ONGESCHIKTE_WONING",
                                     "ONBEBOUWDE_PERCELEN",
                                     "INDUSTRIETERREINEN"
-                                ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
                                 ]
                             },
                             "beschrijving": {
@@ -3721,21 +3669,6 @@
                                     "ONBEBOUWDE_KAVEL"
                                 ]
                             },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
-                            },
                             "inventarisRechtVanTerugkoop": {
                                 "type": "boolean"
                             },
@@ -3757,9 +3690,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "planType": {
                                 "title": "PlanType",
                                 "type": "string",
@@ -3785,14 +3715,6 @@
                                     "ZONERINGSGEBIED"
                                 ]
                             },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
-                                ]
-                            },
                             "beschrijving": {
                                 "type": "string"
                             },
@@ -3814,21 +3736,6 @@
                             },
                             "behoudIntegraal": {
                                 "type": "boolean"
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             },
                             "planStatus": {
                                 "type": "string",
@@ -3857,23 +3764,12 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "rechtType": {
                                 "title": "RechtType",
                                 "type": "string",
                                 "description": "RechtType volgens het OSLO-model",
                                 "enum": [
                                     "RECHT_VAN_VOORKOOP"
-                                ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
                                 ]
                             },
                             "beschrijving": {
@@ -3892,21 +3788,6 @@
                             },
                             "houder": {
                                 "type": "string"
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -3923,17 +3804,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
-                                ]
-                            },
                             "referentie": {
                                 "type": "string"
                             },
@@ -3968,21 +3838,6 @@
                                     "NIEUWE_RISICOZONE",
                                     "BEVESTIGDE_RISICOZONE"
                                 ]
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -3999,17 +3854,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
-                                ]
-                            },
                             "referentie": {
                                 "type": "string"
                             },
@@ -4046,21 +3890,6 @@
                                 "items": {
                                     "type": "string"
                                 }
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -4077,9 +3906,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "verordeningsType": {
                                 "title": "VerordeningsType",
                                 "type": "string",
@@ -4091,14 +3917,6 @@
                                     "GEMEENTELIJKE_BOUWVERORDENING",
                                     "GEWESTELIJKE_BOUWVERORDENING",
                                     "PROVINCIALE_BOUWVERORDENING"
-                                ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
                                 ]
                             },
                             "beschrijving": {
@@ -4122,21 +3940,6 @@
                                     "BESLUIT_TOT_GOEDKEURING",
                                     "NATRAJECT"
                                 ]
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             }
                         }
                     }
@@ -4153,9 +3956,6 @@
                     {
                         "type": "object",
                         "properties": {
-                            "inlichtingId": {
-                                "type": "string"
-                            },
                             "vorderingType": {
                                 "title": "VorderingType",
                                 "type": "string",
@@ -4163,29 +3963,6 @@
                                 "enum": [
                                     "HERSTELVORDERING"
                                 ]
-                            },
-                            "inlichtingenIndicator": {
-                                "type": "string",
-                                "enum": [
-                                    "JA",
-                                    "NEE",
-                                    "NIET_GEKEND"
-                                ]
-                            },
-                            "rubriek": {
-                                "type": "string",
-                                "enum": [
-                                    "OVERHEIDSPLANNEN",
-                                    "MILIEU",
-                                    "NATUUR",
-                                    "GROND_EN_PANDENBELEID"
-                                ]
-                            },
-                            "bijlagen": {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/components/schemas/Document"
-                                }
                             },
                             "beschrijving": {
                                 "type": "string"
